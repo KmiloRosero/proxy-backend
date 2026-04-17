@@ -56,5 +56,5 @@ if [ -n "$JAVA_HOME" ] && [ -x "$JAVA_HOME/bin/java" ]; then
   JAVA_CMD="$JAVA_HOME/bin/java"
 fi
 
-exec "$JAVA_CMD" -classpath "$WRAPPER_JAR" "${WRAPPER_LAUNCHER}" "$@"
+exec "$JAVA_CMD" -Dmaven.multiModuleProjectDirectory="$MAVEN_PROJECTBASEDIR" -classpath "$WRAPPER_JAR" "${WRAPPER_LAUNCHER}" "$@"
 
